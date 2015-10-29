@@ -4,11 +4,11 @@ object Event{
 
   def createUser(): User = {
     println(">> type user information")
-    print("-- User ID\t\t: ")
+    print("-- User ID\t: ")
     val id = scala.io.StdIn.readLine()
     print("-- User name\t: ")
     val name = scala.io.StdIn.readLine()
-    print("-- TEL num\t\t: ")
+    print("-- TEL num\t: ")
     val phone = scala.io.StdIn.readLine()
     print("-- Mail addr\t: ")
     val addr = scala.io.StdIn.readLine()
@@ -37,13 +37,22 @@ object Event{
   def connectRoom(): Unit = {}
   def writeLog(): Unit = {}
 
+  def printUserInfo(usr:User): Unit = {
+    println("|| === User Information ===")
+    println("|| Name\t: " ++ usr.name)
+    println("|| ID\t: " ++ usr.id)
+    println("|| Phone\t: " ++ usr.phone)
+    println("|| Addr\t: " ++ usr.addr)
+    println()
+  }
+
   def exit(): Unit = {
     println(Main.clear())
-    println("\n  ## ScalaChat has been closed. Bye! ##\n")
+    println("  ## ScalaChat has been closed. Bye! ##\n")
   }
 
   def logout(): Unit = {
     println(Main.clear())
-    println("\n  ## logout successfully. ##\n")
+    println("  ## logout successfully. ##\n")
   }
 }

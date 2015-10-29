@@ -4,7 +4,8 @@ object MainMenu {
   def prompt(): String = ">> type a command you want to execute.\n-- A\t: add new friend\n-- L\t: show friend list\n-- Q\t: logout\n>> "
   def menu(ctrlUser:User): Unit = {
     println(Main.clear())
-    println("\n>> successfully logged in as " ++ ctrlUser.toString ++ "\n")
+    Event.printUserInfo(ctrlUser)
+    println(">> successfully logged in as " ++ ctrlUser.toString ++ "\n")
     print(prompt())
 
     // menu
