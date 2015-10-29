@@ -2,7 +2,12 @@ package com.example
 
 object Event{
 
-  def createUser(): User = {
+  def clear(): String = "\u001b[H\u001b[2J"
+  def startUp(): String = "    ##########################\n    #  Welcome to ScalaChat  #\n    ##########################\n"
+
+  // TODO input validation
+  def createUser(): Unit = {
+    println(Event.clear())
     println(">> type user information")
     print("-- User ID\t: ")
     val id = scala.io.StdIn.readLine()
@@ -13,7 +18,18 @@ object Event{
     print("-- Mail addr\t: ")
     val addr = scala.io.StdIn.readLine()
 
-    new User(id, name, phone, addr)
+    val newUser = new User(id, name, phone, addr)
+
+    println(
+      if (existUser(newUser.id))
+        "!! UserID duplicated\n"
+      else {
+        // id a-z _
+        // tel 0-9
+        Main.users += newUser
+        ">> created successfully\n"
+      }
+    )
   }
 
    def existUser(id: String): Boolean = {
@@ -30,14 +46,34 @@ object Event{
     }
   }
 
+  // TODO
   def existUserByPhoneOrAddr(id: String): Boolean = {
    true
   }
 
   // TODO
-  def addFriend(): Unit  = {}
+  def addFriend(usr:User, key:String): Unit  = {
+    println(
+      if (existUserByPhoneOrAddr(key)) {
+        usr.friends += key
+        ">> " + key + " is successfully added to friends list\n"
+      } else {
+        "!! no such user\n"
+      }
+    )
+  }
+
+  def existFriend(usr:User, id:String): Boolean = {
+    usr.friends.find(_ == id) match {
+      case Some(_) => true
+      case None => false
+    }
+  }
+
+  // TODO
   def previewFriends(): Unit = {}
   def sendMessage(): Unit = {}
+  def findRoom(): Unit = {}
   def connectRoom(): Unit = {}
   def writeLog(): Unit = {}
 
@@ -45,18 +81,33 @@ object Event{
     println("|| === User Information ===")
     println("|| Name\t: " ++ usr.name)
     println("|| ID\t: " ++ usr.id)
-    println("|| Phone\t: " ++ usr.phone)
+    println("|| TEL\t: " ++ usr.phone)
     println("|| Addr\t: " ++ usr.addr)
+    println("|| ========================")
     println()
   }
 
   def exit(): Unit = {
-    println(Main.clear())
+    println(clear())
     println("  ## ScalaChat has been closed, Bye! ##\n")
   }
 
+  def login(): Unit = {
+    println(clear())
+    print(">> input user id: ")
+    val id: String = scala.io.StdIn.readLine()
+    println(
+      if (Event.existUser(id)) {
+        MainMenu.menu(Event.findUser(id))
+        ""
+      }
+      else
+        "!! no such user, failed to login\n"
+    )
+  }
+
   def logout(): Unit = {
-    println(Main.clear())
+    println(clear())
     println("  ## logout successfully ##\n")
   }
 }
