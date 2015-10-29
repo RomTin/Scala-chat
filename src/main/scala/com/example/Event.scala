@@ -30,8 +30,12 @@ object Event{
     }
   }
 
+  def existUserByPhoneOrAddr(id: String): Boolean = {
+   true
+  }
+
   // TODO
-  def addFriend(): Unit = {}
+  def addFriend(): Unit  = {}
   def previewFriends(): Unit = {}
   def sendMessage(): Unit = {}
   def connectRoom(): Unit = {}
@@ -48,11 +52,11 @@ object Event{
 
   def exit(): Unit = {
     println(Main.clear())
-    println("  ## ScalaChat has been closed. Bye! ##\n")
+    println("  ## ScalaChat has been closed, Bye! ##\n")
   }
 
   def logout(): Unit = {
     println(Main.clear())
-    println("  ## logout successfully. ##\n")
+    println("  ## logout successfully ##\n")
   }
 }

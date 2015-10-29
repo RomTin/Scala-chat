@@ -1,8 +1,8 @@
 package com.example
 
-/**
- * Created by Komatsu Ryoya on 2015/10/27.
- */
-class ChatRoom {
+import scala.collection.mutable.ListBuffer
 
+class ChatRoom {
+  val Messages = ListBuffer("id", "body", "date", 0)
+  Messages += ("a","a","a", 1)
 }
