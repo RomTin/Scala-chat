@@ -63,8 +63,8 @@
               <file leaf-file-name="ChatRoom.scala" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/main/scala/com/example/ChatRoom.scala">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.3807391">
-                      <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+                    <state vertical-scroll-proportion="0.4568869">
+                      <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
                       <folding>
                         <element signature="e#21#42#0" expanded="true" />
                       </folding>
@@ -86,20 +86,20 @@
           </split-first>
           <split-second>
             <leaf>
-              <file leaf-file-name="Main.scala" pinned="false" current-in-tab="true">
+              <file leaf-file-name="Main.scala" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/main/scala/com/example/Main.scala">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.57110864">
+                    <state vertical-scroll-proportion="0.0">
                       <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="MainMenu.scala" pinned="false" current-in-tab="false">
+              <file leaf-file-name="MainMenu.scala" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/main/scala/com/example/MainMenu.scala">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.0">
+                    <state vertical-scroll-proportion="0.3617021">
                       <caret line="19" column="77" selection-start-line="19" selection-start-column="77" selection-end-line="19" selection-end-column="77" />
                       <folding />
                     </state>
@@ -122,10 +122,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/scala/com/example/Hello.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/example/User.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/example/ChatRoom.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/example/MainMenu.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/example/Main.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/example/Event.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/example/ChatRoom.scala" />
       </list>
     </option>
   </component>
@@ -630,15 +630,15 @@
       <workItem from="1446170063902" duration="173000" />
       <workItem from="1446197795591" duration="85000" />
       <workItem from="1446197933715" duration="4996000" />
-      <workItem from="1446281425689" duration="14367000" />
+      <workItem from="1446281425689" duration="14814000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48203000" />
+    <option name="totallyTimeSpent" value="48650000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1297,27 +1297,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/example/ChatRoom.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3807391">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-          <folding>
-            <element signature="e#21#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/example/MainMenu.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="77" selection-start-line="19" selection-start-column="77" selection-end-line="19" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/example/Main.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57110864">
+        <state vertical-scroll-proportion="0.0">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
@@ -1344,6 +1326,24 @@
             <element signature="e#3839#3941#0" expanded="false" />
             <element signature="e#3944#4226#0" expanded="false" />
             <element signature="e#4229#4321#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/example/MainMenu.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3617021">
+          <caret line="19" column="77" selection-start-line="19" selection-start-column="77" selection-end-line="19" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/example/ChatRoom.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4568869">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="e#21#42#0" expanded="true" />
           </folding>
         </state>
       </provider>

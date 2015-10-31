@@ -20,6 +20,7 @@ class ChatRoom(val id1: String, val id2: String) {
         Event.previewMessage(msg)
         print("\n" ++ prompt())
     }
+    println()
   }
 
   def sendMessage(from:String, body:String): Unit = {
