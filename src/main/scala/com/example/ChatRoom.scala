@@ -9,6 +9,7 @@ class ChatRoom(val id1: String, val id2: String) {
 
   def chatMain(from:String, to:String): Unit = {
     // enter and initialize
+
     msg.foreach(m => if (m.id == to) m.read = 1)
     Event.previewMessage(msg)
     print(prompt())
@@ -16,7 +17,6 @@ class ChatRoom(val id1: String, val id2: String) {
     Iterator.continually(scala.io.StdIn.readLine()).takeWhile(_ != ":q!").foreach {
       input =>
         sendMessage(from, input)
-        println(Event.clear())
         Event.previewMessage(msg)
         print("\n" ++ prompt())
     }

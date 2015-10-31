@@ -84,6 +84,7 @@ object Event{
     }
   }
   def previewMessage(msg:ListBuffer[Message]): Unit = {
+    println(clear())
     msg.foreach(println(_))
   }
   def remainedUnRead(room:ChatRoom, id:String): String = {
@@ -100,7 +101,7 @@ object Event{
       case _ =>
         existFriend(usr, input) match {
           case true  => connectRoom(usr.id, input)
-          case false => println("!! no such friend")
+          case false => println("!! no such friend\n")
         }
     }
   }

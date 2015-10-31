@@ -18,7 +18,6 @@ object Main {
     Iterator.continually(scala.io.StdIn.readLine()).takeWhile(_ != null).foreach {
       command => command.toLowerCase match {
         case "c" => Event.createUser()
-          users.foreach(println(_))
         case "l" => Event.login()
         case  _  => println("!! Unknown operation\n")
       }

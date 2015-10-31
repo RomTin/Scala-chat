@@ -7,7 +7,7 @@ object MainMenu {
 
   def menu(ctrlUser:User): Unit = {
     // user start up and prompt
-    header(ctrlUser)equals
+    header(ctrlUser)
     println(">> successfully logged in as \"" ++ ctrlUser.toString ++ "\"")
     print(prompt())
 
@@ -17,7 +17,7 @@ object MainMenu {
         header(ctrlUser)
         command.toLowerCase match {
         case "a" => Event.addFriend(ctrlUser)
-        case "l" => Event.showFriends(ctrlUser); Event.roomEntrance(ctrlUser);
+        case "l" => Event.showFriends(ctrlUser); Event.roomEntrance(ctrlUser)
         case  _  => println("!! Unknown operation\n")
       }
         // return to menu
