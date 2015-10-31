@@ -14,3 +14,6 @@
 
 ### Manual
 just run it
+
+### demo
+![demo](./demo.gif)

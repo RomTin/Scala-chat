@@ -9,7 +9,6 @@ object Event{
 
   // TODO input validation
   def createUser(): Unit = {
-    println(Event.clear())
     println(">> type user information")
     print("-- User ID\t: ")
     val id = scala.io.StdIn.readLine()
@@ -136,7 +135,6 @@ object Event{
     println("  ## ScalaChat has been closed, Bye! ##\n")
   }
   def login(): Unit = {
-    println(clear())
     print(">> input user id: ")
     val id: String = scala.io.StdIn.readLine()
     Event.existUser(id) match {
