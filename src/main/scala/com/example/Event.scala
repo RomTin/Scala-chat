@@ -1,5 +1,7 @@
 package com.example
 
+import scala.collection.mutable.ListBuffer
+
 object Event{
 
   def clear(): String = "\u001b[H\u001b[2J"
@@ -84,17 +86,35 @@ object Event{
     }
   }
 
-  // TODO
-  def sendMessage(): Unit = {}
-  def previewMessage(): Unit = {}
+  def previewMessage(msg:ListBuffer[Message]): Unit = {
+    msg.foreach(println(_))
+  }
 
-  def roomEntrance(): Unit = {
-
+  def roomEntrance(usr:User): Unit = {
+    println(">> type a User ID you want to send messages, or \":q!\" to abort")
+    val input = scala.io.StdIn.readLine()
+    input match {
+      case ":q!" => println()
+      case _ =>
+        existFriend(usr, input) match {
+          case true  => connectRoom(usr.id, input)
+          case false => println("!! no such friend")
+        }
+    }
   }
 
   // TODO
-  def findRoom(): Unit = {}
-  def connectRoom(): Unit = {}
+  def findRoom(id1: String, id2: String): ChatRoom = {
+   new ChatRoom(id1, id2)
+    // adding Main.rooms will be done
+  }
+
+  def connectRoom(from:String, to:String): Unit = {
+    val room = findRoom(from, to)
+    room.chatMain(from, to)
+  }
+
+  // TODO
   def writeLog(): Unit = {}
 
   def printUserInfo(usr:User): Unit = {
@@ -116,14 +136,10 @@ object Event{
     println(clear())
     print(">> input user id: ")
     val id: String = scala.io.StdIn.readLine()
-    println(
-      if (Event.existUser(id)) {
-        MainMenu.menu(Event.findUser(id))
-        ""
-      }
-      else
-        "!! no such user, failed to login\n"
-    )
+    Event.existUser(id) match {
+      case true => MainMenu.menu(Event.findUser(id))
+      case false => println("!! no such user, failed to login\n")
+    }
   }
 
   def logout(): Unit = {
