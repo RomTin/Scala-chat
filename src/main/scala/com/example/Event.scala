@@ -45,24 +45,26 @@ object Event{
       case None => null
     }
   }
-  // TODO
-  def existUserByPhoneOrAddr(id: String): Boolean = {
-   true
+  def getIdByPhoneOrAddr(key: String): String = {
+    Main.users.find(u => u.addr == key || u.phone == key) match {
+      case Some(user) => user.id
+      case None => ""
+    }
   }
   def addFriend(usr:User): Unit  = {
     println(">> type an phone-number or e-mail you want to add to friends")
     print(">>(number should be without hyphen) : ")
     val key = scala.io.StdIn.readLine()
-
+    val id = getIdByPhoneOrAddr(key)
     println(
-      if (existUserByPhoneOrAddr(key)) {
-        existFriend(usr, key) match {
+      if (id != "") {
+        existFriend(usr, id) match {
           case true =>
-            ">> already added to your friends\n"
+            "!! already added to your friends\n"
           case false =>
-            usr.friends += key
-            findUser(key).friends += usr.id
-            ">> \"" + key + "\" is successfully added to friends list\n"
+            usr.friends += id
+            findUser(id).friends += usr.id
+            ">> \"" + id + "\" is successfully added to friends list\n"
         }
       } else {
         "!! no such user\n"
