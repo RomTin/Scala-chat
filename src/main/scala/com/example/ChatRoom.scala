@@ -4,7 +4,7 @@ import java.util.Date
 import scala.collection.mutable.ListBuffer
 
 class ChatRoom(val id1: String, val id2: String) {
-  val msg: ListBuffer[Message] = ListBuffer(new Message("administrator", "Let's enjoy chat!!", ""))
+  val msg: ListBuffer[Message] = ListBuffer(new Message("admin", "Let's enjoy chat!!", "00:00:00"))
   def prompt(): String = "\n>> type a message or \":q!\" to quit the room\n>> "
 
   def chatMain(from:String, to:String): Unit = {
