@@ -19,7 +19,7 @@ object Main {
         case "c" => Event.createUser()
           users.foreach(println(_))
         case "l" => Event.login()
-        case _ => println("!! Unknown operation\n")
+        case  _  => println("!! Unknown operation\n")
       }
         // return to main
         print(prompt())

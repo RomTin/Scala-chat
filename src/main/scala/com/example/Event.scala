@@ -32,7 +32,7 @@ object Event{
     )
   }
 
-   def existUser(id: String): Boolean = {
+  def existUser(id: String): Boolean = {
      Main.users.find(_.id == id) match {
        case Some(_) => true
        case None => false
@@ -51,16 +51,30 @@ object Event{
    true
   }
 
-  // TODO
-  def addFriend(usr:User, key:String): Unit  = {
+  def addFriend(usr:User): Unit  = {
+    println(">> type an phone-number or e-mail you want to add to friends")
+    print(">>(number should be without hyphen) : ")
+    val key = scala.io.StdIn.readLine()
+
     println(
       if (existUserByPhoneOrAddr(key)) {
-        usr.friends += key
-        ">> " + key + " is successfully added to friends list\n"
+        existFriend(usr, key) match {
+          case true =>
+            ">> already added to your friends\n"
+          case false =>
+            usr.friends += key
+            ">> \"" + key + "\" is successfully added to friends list\n"
+        }
       } else {
         "!! no such user\n"
       }
     )
+  }
+
+  def showFriends(usr:User): Unit = {
+    println(">> === your friends")
+    usr.friends.foreach(f => println("[[ " ++ Event.findUser(f).toString() ++ " ]]"))
+    println()
   }
 
   def existFriend(usr:User, id:String): Boolean = {
@@ -71,8 +85,14 @@ object Event{
   }
 
   // TODO
-  def previewFriends(): Unit = {}
   def sendMessage(): Unit = {}
+  def previewMessage(): Unit = {}
+
+  def roomEntrance(): Unit = {
+
+  }
+
+  // TODO
   def findRoom(): Unit = {}
   def connectRoom(): Unit = {}
   def writeLog(): Unit = {}
