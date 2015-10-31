@@ -91,7 +91,7 @@ object Event{
   }
 
   def roomEntrance(usr:User): Unit = {
-    println(">> type a User ID you want to send messages, or \":q!\" to abort")
+    print(">> type a User ID you want to send messages, or \":q!\" to abort\n>> ")
     val input = scala.io.StdIn.readLine()
     input match {
       case ":q!" => println()

@@ -13,8 +13,9 @@ object MainMenu {
 
     // menu
     Iterator.continually(scala.io.StdIn.readLine()).takeWhile(_ != "q").foreach {
-      header(ctrlUser)
-      command => command.toLowerCase match {
+      command =>
+        header(ctrlUser)
+        command.toLowerCase match {
         case "a" => Event.addFriend(ctrlUser)
         case "l" => Event.showFriends(ctrlUser); Event.roomEntrance(ctrlUser);
         case  _  => println("!! Unknown operation\n")
